@@ -18,6 +18,29 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style type="text/css">
+       
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+
+    </style>
 </head>
 <body>
     <div id="app">
@@ -98,6 +121,21 @@
         <main class="py-4">
             @yield('content')
         </main>
+    </div>
+
+    @section('footer')
+    
+        <footer class="footer">
+            <div class="container">
+                <center><span class="text-muted">Coleta Digital 2018 &copy</span></center>
+            </div>
+        </footer>
+
+    @endsection
+
+    
+    <div class="footer">
+        @yield('footer')
     </div>
 </body>
 </html>

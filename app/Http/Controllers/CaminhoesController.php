@@ -40,6 +40,8 @@ class CaminhoesController extends Controller
         $placa = Input::get('placa');
 
         DB::insert('insert into caminhoes (cor,placa) values (?,?)',[$cor,$placa]);
+
+        return redirect()->to(route('index'));
     }
 
     /**

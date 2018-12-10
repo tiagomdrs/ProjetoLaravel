@@ -42,6 +42,8 @@ class MotoristasController extends Controller
 
 
         DB::insert('insert into motoristas (name,email,cnh) values (?,?,?)',[$nome,$email,$cnh]);
+
+        return redirect()->to(route('index'));
     }
 
     /**

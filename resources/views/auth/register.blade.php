@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card text-white bg-secondary mb-3">
+            <div class="card border-success mb-3">
                 <div class="card-header"><center>{{ __('Cadastrar-se') }}</center></div>
 
                 <div class="card-body">
@@ -38,10 +38,6 @@
                                 @endif
                             </div>
                         </div>
-
-                        
-
-                        
 
                         <div class="form-group row">
                             <label for="email" class="col-md-3 col-form-label text-md-right">{{ __('Tipo') }}</label>

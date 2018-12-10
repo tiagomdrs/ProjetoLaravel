@@ -22,7 +22,8 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+
         $noticias = DB::select('select * from noticias');
         return view('index',['noticias' => $noticias]);
     }

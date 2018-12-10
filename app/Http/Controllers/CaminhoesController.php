@@ -50,9 +50,10 @@ class CaminhoesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show()
+    {  
+        $caminhoes = DB::select('select * from caminhoes');
+        return view('Caminhoes.mostrar',['caminhoes' => $caminhoes]);
     }
 
     /**

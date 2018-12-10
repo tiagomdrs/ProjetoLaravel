@@ -14,7 +14,7 @@
 
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/home', 'HomeController@home')->name('home');
-
+ 
 Route::get('/sobre', 'ConteudoController@sobre')->name('sobre');
 Route::get('/coleta_seletiva', 'ConteudoController@coleta')->name('coleta_seletiva');
 Route::get('/lixeiras', 'ConteudoController@lixeiras')->name('lixeiras');

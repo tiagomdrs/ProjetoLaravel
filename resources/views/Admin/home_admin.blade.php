@@ -22,6 +22,7 @@
 	                                <h5 class="card-title">Caminhões</h5>
 	                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 	                                <a href="{{ route('caminhoes.create') }}" class="btn btn-outline-success">Cadastrar</a>
+
 	                            </center>
 	                        </div>
                     	</div>
@@ -33,6 +34,7 @@
 	                                <h5 class="card-title">Notícias</h5>
 	                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 	                                <a href="{{ route('noticias.create') }}" class="btn btn-outline-success">Cadastrar</a>
+	                                
 	                            </center>
 	                        </div>
                     	</div>

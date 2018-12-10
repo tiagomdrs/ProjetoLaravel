@@ -15,8 +15,7 @@ class NoticiasController extends Controller
      */
     public function index()
     {
-        $noticias = DB::select('select * from noticias');
-        return view('index',['noticias' => $noticias]);
+    
     }
 
     /**
@@ -52,9 +51,10 @@ class NoticiasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $noticias = DB::select('select * from noticias');
+        return view('Noticias.mostrar',['noticias' => $noticias]);
     }
 
     /**

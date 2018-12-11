@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use DB;
+
 class HomeController extends Controller
 {
     /**
@@ -23,9 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {   
-
-        $noticias = DB::select('select * from noticias');
-        return view('index',['noticias' => $noticias]);
+        return redirect()->to(route('noticias.index'));
     }
 
     public function home()
@@ -33,7 +33,8 @@ class HomeController extends Controller
         $type = auth()->user()->type;
 
         if ($type == 'admin') {
-            return view ('Admin.home_admin');
+            $id = Auth::id();
+            return view ('Admin.home_admin', ['id' => $id]);
         }
 
         else if ($type == 'user') {
@@ -41,7 +42,7 @@ class HomeController extends Controller
         }
 
         else{
-
+ 
             return redirect()->to(route('index'));
         }
     }

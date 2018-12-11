@@ -15,7 +15,8 @@ class MotoristasController extends Controller
      */
     public function index()
     {
-        //
+        $motoristas = DB::select('select * from motoristas');
+        return view('Motoristas.mostrar',['motoristas' => $motoristas]);
     }
 
     /**
@@ -52,10 +53,9 @@ class MotoristasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        $motoristas = DB::select('select * from motoristas');
-        return view('Motoristas.mostrar',['motoristas' => $motoristas]);
+        
     }
 
     /**

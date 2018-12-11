@@ -15,7 +15,8 @@ class CaminhoesController extends Controller
      */
     public function index()
     {
-        //
+        $caminhoes = DB::select('select * from caminhoes');
+        return view('Caminhoes.mostrar',['caminhoes' => $caminhoes]);
     }
 
     /**
@@ -26,7 +27,7 @@ class CaminhoesController extends Controller
     public function create()
     {
         return view('Caminhoes.criar');
-    }
+    } 
 
     /**
      * Store a newly created resource in storage.
@@ -50,10 +51,9 @@ class CaminhoesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {  
-        $caminhoes = DB::select('select * from caminhoes');
-        return view('Caminhoes.mostrar',['caminhoes' => $caminhoes]);
+        
     }
 
     /**

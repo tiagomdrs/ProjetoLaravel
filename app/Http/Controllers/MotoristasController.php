@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\facades\Input;
+use App\Motoristas;
 use DB;
 
 class MotoristasController extends Controller
@@ -44,7 +45,7 @@ class MotoristasController extends Controller
 
         DB::insert('insert into motoristas (name,email,cnh) values (?,?,?)',[$nome,$email,$cnh]);
 
-        return redirect()->to(route('index'));
+        return redirect()->to(route('admin.home'));
     }
 
     /**
@@ -89,6 +90,8 @@ class MotoristasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Motoristas::find($id)->delete(); 
+
+        return redirect()->to(route('admin.home'));
     }
 }

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; 
 use Illuminate\Support\facades\Input;
+use App\Noticias;
 use DB;
 
 class NoticiasController extends Controller
@@ -43,7 +44,7 @@ class NoticiasController extends Controller
 
         DB::insert('insert into noticias (tt_principal,tt_auxiliar,corpo,id_adm) values (?,?,?,?)',[$titulo,$auxiliar,$corpo,1]);
 
-        return redirect()->to(route('index'));
+        return redirect()->to(route('admin.home'));
     }
 
     /**
@@ -88,6 +89,8 @@ class NoticiasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Noticias::find($id)->delete(); 
+
+        return redirect()->to(route('admin.home'));
     }
 }

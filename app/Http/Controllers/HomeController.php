@@ -25,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        return redirect()->to(route('noticias.index'));
+        $noticias = DB::select('select * from noticias');
+        return view('index',['noticias' => $noticias]);
     }
 
     public function home()

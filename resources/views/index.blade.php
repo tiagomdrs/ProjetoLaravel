@@ -5,7 +5,6 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            TELA PARA NOTÍCIAS CADASTRADAS (FUNCIONANDO!)
             @foreach ($noticias as $noticia)
                 <div class="card border-success mb-3">
                     <div class="card-body">

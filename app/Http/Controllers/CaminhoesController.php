@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\facades\Input;
+use App\Caminhoes;
 use DB;
 
 class CaminhoesController extends Controller
@@ -28,7 +29,7 @@ class CaminhoesController extends Controller
     {
         return view('Caminhoes.criar');
     } 
-
+ 
     /**
      * Store a newly created resource in storage.
      *
@@ -42,7 +43,7 @@ class CaminhoesController extends Controller
 
         DB::insert('insert into caminhoes (cor,placa) values (?,?)',[$cor,$placa]);
 
-        return redirect()->to(route('index'));
+        return redirect()->to(route('admin.home'));
     }
 
     /**
@@ -87,6 +88,8 @@ class CaminhoesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Caminhoes::find($id)->delete(); 
+
+        return redirect()->to(route('admin.home'));
     }
 }
